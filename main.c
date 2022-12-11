@@ -1,47 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
-    int level;
-    char lagi;
-
-    printf("Welcome to Tic Tac Toe Game :)\n");
-    puts("Deskripsi level:");
-    puts("Level 1 : player 1 vs player 2 gaada menang/kalah");
-    puts("Level 2 : player 1 vs player 2 bisa menang/kalah");
-    puts("Level 3 : player vs bot(noob)");
-    puts("Level 4 : player vs bot(pro)\n");
-    do{
-        printf("Pilih level(1-4) : ");
-        scanf("%d", &level);
-
-        switch(level){
-            case 1:
-                level_1();
-                break;
-            case 2:
-                level_2();
-                break;
-            case 3:
-                level_3();
-                break;
-            case 4:
-                level_4();
-                break;
-            default:
-                printf("Input salah bang!\n");
-                exit(0);
-        }
-
-        fflush(stdin);
-        printf("Main lagi ga (y/t)? ");
-        scanf("%c", &lagi);
-        puts("");
-    }while(lagi == 'Y' || lagi == 'y');
-
-    return 0;
-}
-
 char tampil_giliran(int kode){
     if (kode == 0)
         return '.';
@@ -247,4 +206,45 @@ void level_4(){
 
     tampil(board);
     tampil_pemenang(board, 1);
+}
+
+int main(){
+    int level;
+    char lagi;
+
+    printf("Welcome to Tic Tac Toe Game :)\n");
+    puts("Deskripsi level:");
+    puts("Level 1 : player 1 vs player 2 gaada menang/kalah");
+    puts("Level 2 : player 1 vs player 2 bisa menang/kalah");
+    puts("Level 3 : player vs bot(noob)");
+    puts("Level 4 : player vs bot(pro)\n");
+    do{
+        printf("Pilih level(1-4) : ");
+        scanf("%d", &level);
+
+        switch(level){
+            case 1:
+                level_1();
+                break;
+            case 2:
+                level_2();
+                break;
+            case 3:
+                level_3();
+                break;
+            case 4:
+                level_4();
+                break;
+            default:
+                printf("Input salah bang!\n");
+                exit(0);
+        }
+
+        fflush(stdin);
+        printf("Main lagi ga (y/t)? ");
+        scanf("%c", &lagi);
+        puts("");
+    }while(lagi == 'Y' || lagi == 'y');
+
+    return 0;
 }
